@@ -1,0 +1,45 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.8'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:11.0.0'
+    implementation 'com.graphql-java-kickstart:playground-spring-boot-starter:11.0.0'
+    implementation 'com.graphql-java-kickstart:graphql-java-tools:11.0.0'
+
+    implementation 'com.querydsl:querydsl-jpa:4.4.0'
+    implementation 'com.querydsl:querydsl-apt:4.4.0'
+
+	implementation 'com.graphql-java-kickstart:voyager-spring-boot-starter:11.0.0'
+
+	implementation 'org.apache.poi:poi:5.2.0'
+
+	implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+
+
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'com.graphql-java-kickstart:graphql-spring-boot-starter-test:11.0.0'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

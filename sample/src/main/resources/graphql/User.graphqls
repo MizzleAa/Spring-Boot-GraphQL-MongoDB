@@ -1,0 +1,46 @@
+type User {
+    #pk
+    id: String!
+    #이메일
+    email: String
+    #비밀번호
+    password: String
+    #이름
+    name: String
+    #나이
+    age: Int
+}
+
+input CreateUser{
+    #이메일
+    email: String
+    #비밀번호
+    password: String
+    #이름
+    name: String
+    #나이
+    age: Int
+}
+
+input DeleteUser{
+    email: String
+}
+
+input UpdateUser{
+    #
+    eamil: String
+    #
+    name: String
+    #
+    age: Int
+}
+
+type Query{
+    read(email: String!) : User!
+}
+
+type Mutation{
+    create(createUser: CreateUser) : User!
+    delete(deleteUser: DeleteUser) : Boolean!
+    update(updateUser: UpdateUser) : User!
+}
